@@ -41,4 +41,11 @@ class PageController extends Controller
             'socials', 'breadcrumb', 'contact_section', 'contacts', 'pages', 'color_option'));
     }
 
+    public function about_us(){
+        return view('frontend.pages.about_us');
+    }
+
+    public function contact_us(){
+        return view('frontend.pages.contact_us');
+    }
 }

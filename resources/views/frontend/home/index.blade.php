@@ -78,7 +78,7 @@
                             <div class="wt-header-center">
                                 <div class="logo-header">
                                     <div class="logo-header-inner logo-header-one">
-                                        <a href="index.html">
+                                        <a href="{{ URL::to('/') }}">
                                             <img src="{{asset('assets/frontend/images/logo-dark.png')}}" width="171" height="49" alt="" />
                                         </a>
                                     </div>
@@ -146,63 +146,29 @@
                                         <div class="vertical-nav">
                                             <ul class=" nav navbar-nav">
                                                 <li class="active">
-                                                    <a href="javascript:;">Home</a>
-                                                    <ul class="sub-menu">
-                                                        <li>
-                                                            <a href="index.html">Home-1</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index-2.html">Home-2</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index-3.html">Home-3</a>
-                                                        </li> 
-                                                        <li>
-                                                            <a href="index-4.html">Home-4</a>
-                                                        </li>                                                                                                                    
-                
-                                                    </ul>                                                    
+                                                    <a href="{{ URL::to('/') }}">Home</a>
+                                                                                              
                                                 </li>
                                                 <li>
                                                     <a href="javascript:;">Pages</a>
                                                     <ul class="sub-menu">
                                                         <li>
-                                                            <a href="about-1.html">About us</a>
+                                                            <a href="{{ URL::to('/page-aboutus') }}">About us</a>
                                                         </li>
                                                         <li>
-                                                            <a href="contact-1.html">Contact us</a>
+                                                            <a href="{{ URL::to('/page-contactus') }}">Contact us</a>
                                                         </li>
                                                     </ul>
                                                 </li>
                                                 <li>
-                                                    <a href="javascript:;">Blog</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="news-grid.html">Grid</a></li>
-                                                        <li><a href="news-listing.html">Listing</a></li>
-                                                        <li><a href="news-masonry.html">Masonry</a></li>
-                                                    </ul>
+                                                    <a href="{{ URL::to('/page-blog') }}">Blog</a>
+                                                    
                                                 </li>
                                                 <li>
-                                                    <a href="javascript:;">Works</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="work-grid.html">Grid</a></li>
-                                                        <li><a href="work-masonry.html">Masonry</a></li>
-                
-                                                        <li><a href="project-detail.html">Project Detail</a></li>                                        
-                                                    </ul>
+                                                    <a href="{{ URL::to('/page-works') }}">Works</a>
+                                                   
                                                 </li>
-                                                <li>
-                                                    <a href="javascript:;">Blog detail</a>
-                                                    <ul class="sub-menu">
-                
-                                                        <li><a href="post-gallery.html">Gallery</a></li>
-                
-                                                        <li><a href="post-right-sidebar.html">Right Sidebar</a></li>                                        
-                                                    </ul>                                    
-                                                </li>
-                                                <li class="submenu-direction">
-                                                    <a href="all-elements.html">All Elements</a>
-                                                </li>                                      
+                                                                           
                                             </ul>
                                         </div>
                                     </div> 
@@ -253,7 +219,7 @@
                         data-param10="" 
                         data-description="">
                             <!-- MAIN IMAGE -->
-                            <img src="images/main-slider/slider1/slide1.jpg"  alt=""  data-lazyload="images/main-slider/slider1/slide1.jpg" data-bgposition="center center" 
+                            <img src="{{asset('assets/frontend/images/main-slider/slider1/slide1.jpg')}}"  alt=""  data-lazyload="images/main-slider/slider1/slide1.jpg" data-bgposition="center center" 
                             data-bgfit="cover" data-bgparallax="4" class="rev-slidebg" data-no-retina>
                             <!-- LAYERS -->
                             <!-- LAYER NR. 1 [ for overlay ] -->
@@ -487,7 +453,7 @@
                         data-param10="" 
                         data-description="">
                             <!-- MAIN IMAGE -->
-                            <img src="images/main-slider/slider1/slide2.jpg"  alt=""  data-lazyload="images/main-slider/slider1/slide2.jpg" data-bgposition="center center" 
+                            <img src="{{asset('assets/frontend/images/main-slider/slider1/slide2.jpg')}}"  alt=""  data-lazyload="{{asset('assets/frontend/images/main-slider/slider1/slide2.jpg')}}" data-bgposition="center center" 
                             data-bgfit="cover" data-bgparallax="4" class="rev-slidebg" data-no-retina>
                             <!-- LAYERS -->
                             <!-- LAYER NR. 1 [ for overlay ] -->
@@ -692,7 +658,7 @@
                         data-param10="" 
                         data-description="">
                             <!-- MAIN IMAGE -->
-                            <img src="images/main-slider/slider1/slide3.jpg"  alt=""  data-lazyload="images/main-slider/slider1/slide3.jpg" data-bgposition="center center" 
+                            <img src="{{asset('assets/frontend/images/main-slider/slider1/slide3.jpg')}}"  alt=""  data-lazyload="images/main-slider/slider1/slide3.jpg" data-bgposition="center center" 
                             data-bgfit="cover" data-bgparallax="4" class="rev-slidebg" data-no-retina>
                             <!-- LAYERS -->
                             <!-- LAYER NR. 1 [ for overlay ] -->
@@ -958,7 +924,7 @@
                             <div class="item fadingcol building-col">
                                 <div class="line-filter-outer">
 
-                                     <img src="images/gallery/portrait-2/pic1.jpg" alt="">
+                                     <img src="{{asset('assets/frontend/images/gallery/portrait-2/pic1.jpg')}}" alt="">
                                     
                                     <div class="hover-effect-1">
                                         <div class="hover-effect-content text-white">
@@ -979,7 +945,7 @@
                             <!-- COLUMNS 2 --> 
                             <div class="item fadingcol  building-col">
                                 <div class="line-filter-outer ">
-                                    <img src="images/gallery/portrait-2/pic2.jpg" alt="">
+                                    <img src="{{asset('assets/frontend/images/gallery/portrait-2/pic2.jpg')}}" alt="">
                                     <div class="hover-effect-1">
                                         <div class="hover-effect-content text-white">
                                             <h4 class="m-tb0 h-category">Renovation</h4>
@@ -999,7 +965,7 @@
                             <!-- COLUMNS 3 --> 
                             <div class="item fadingcol building-col">
                                 <div class="line-filter-outer">
-                                    <img src="images/gallery/portrait-2/pic3.jpg" alt="">
+                                    <img src="{{asset('assets/frontend/images/gallery/portrait-2/pic3.jpg')}}" alt="">
                                     <div class="hover-effect-1">
                                         <div class="hover-effect-content text-white">
                                             <h4 class="m-tb0 h-category">Interior</h4>
@@ -1019,7 +985,7 @@
                             <!-- COLUMNS 4 --> 
                             <div class="item fadingcol building-col">
                                 <div class="line-filter-outer">
-                                    <img src="images/gallery/portrait-2/pic4.jpg" alt="">
+                                    <img src="{{asset('assets/frontend/images/gallery/portrait-2/pic4.jpg')}}" alt="">
                                     <div class="hover-effect-1">
                                         <div class="hover-effect-content text-white">
                                             <h4 class="m-tb0 h-category">Construction</h4>
@@ -1038,7 +1004,7 @@
                             <!-- COLUMNS 5 --> 
                             <div class="item fadingcol interior-col">
                                 <div class="line-filter-outer">
-                                    <img src="images/gallery/portrait-2/pic5.jpg" alt="">
+                                    <img src="{{asset('assets/frontend/images/gallery/portrait-2/pic5.jpg')}}" alt="">
                                     <div class="hover-effect-1">
                                         <div class="hover-effect-content text-white">
                                             <h4 class="m-tb0 h-category">Renovation</h4>
@@ -1057,7 +1023,7 @@
                             <!-- COLUMNS 6 --> 
                             <div class="item fadingcol restaurant-col">
                                 <div class="line-filter-outer">
-                                    <img src="images/gallery/portrait-2/pic6.jpg" alt="">
+                                    <img src="{{asset('assets/frontend/imagesimages/gallery/portrait-2/pic6.jpg')}}" alt="">
                                     <div class="hover-effect-1">
                                         <div class="hover-effect-content text-white">
                                             <h4 class="m-tb0 h-category">Interior</h4>
@@ -1078,7 +1044,7 @@
                             <div class="item fadingcol building-col">
                                 <div class="line-filter-outer">
 
-                                     <img src="images/gallery/portrait-2/pic1.jpg" alt="">
+                                     <img src="{{asset('assets/frontend/images/gallery/portrait-2/pic1.jpg')}}" alt="">
                                     
                                     <div class="hover-effect-1">
                                         <div class="hover-effect-content text-white">
@@ -1099,7 +1065,7 @@
                             <!-- COLUMNS 2 --> 
                             <div class="item fadingcol  building-col">
                                 <div class="line-filter-outer ">
-                                    <img src="images/gallery/portrait-2/pic2.jpg" alt="">
+                                    <img src="{{asset('assets/frontend/images/gallery/portrait-2/pic2.jpg')}}" alt="">
                                     <div class="hover-effect-1">
                                         <div class="hover-effect-content text-white">
                                             <h4 class="m-tb0 h-category">Renovation</h4>
@@ -1119,7 +1085,7 @@
                             <!-- COLUMNS 3 --> 
                             <div class="item fadingcol building-col">
                                 <div class="line-filter-outer">
-                                    <img src="images/gallery/portrait-2/pic3.jpg" alt="">
+                                    <img src="{{asset('assets/frontend/images/gallery/portrait-2/pic3.jpg')}}" alt="">
                                     <div class="hover-effect-1">
                                         <div class="hover-effect-content text-white">
                                             <h4 class="m-tb0 h-category">Interior</h4>
@@ -1154,7 +1120,7 @@
                             <div class="col-md-5 col-sm-12">
                                 <div class="why-choose-half-section">
                                     <div class="wt-media">
-                                        <img src="images/people-1.png" alt="">
+                                        <img src="{{asset('assets/frontend/images/people-1.png')}}" alt="">
                                     </div>
                                     
                                </div>
@@ -1240,7 +1206,7 @@
                             <div class="col-md-4 col-sm-6  col-xs-6 col-xs-100pc m-t15 m-b90">
                                 <div class="wt-team-one">
                                     <div class="wt-team-media">
-                                        <a href="javascript:void(0);"><img src="images/our-team5/pic1.jpg" alt=""></a>
+                                        <a href="javascript:void(0);"><img src="{{asset('assets/frontend/images/our-team5/pic1.jpg')}}" alt=""></a>
                                    
                                         <div class="social-overlay">
                                             <div class="team-social-center">
@@ -1265,7 +1231,7 @@
                             <div class="col-md-4 col-sm-6 col-xs-6 col-xs-100pc m-t15 m-b90">
                                 <div class="wt-team-one">
                                     <div class="wt-team-media ">
-                                        <a href="javascript:void(0);"><img src="images/our-team5/pic2.jpg" alt=""></a>
+                                        <a href="javascript:void(0);"><img src="{{asset('assets/frontend/images/our-team5/pic2.jpg')}}" alt=""></a>
                                         
                                         <div class="social-overlay">
                                             <div class="team-social-center">
@@ -1290,7 +1256,7 @@
                             <div class="col-md-4 col-sm-12 col-xs-12 m-t15 m-b90">
                                 <div class="wt-team-one">
                                     <div class="wt-team-media">
-                                        <a href="javascript:void(0);"><img src="images/our-team5/pic3.jpg" alt=""></a>
+                                        <a href="javascript:void(0);"><img src="{{asset('assets/frontend/images/our-team5/pic3.jpg')}}" alt=""></a>
                                         
                                         <div class="social-overlay">
                                             <div class="team-social-center">
@@ -1332,42 +1298,42 @@
                                     <div class="item">
                                         <div class="ow-client-logo">
                                             <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="images/client-logo/w1.png" alt=""></a></div>
+                                            <a href="javascript:void(0);"><img src="{{asset('assets/frontend/images/client-logo/w1.png')}}" alt=""></a></div>
                                         </div>
                                     </div>
                                     
                                     <div class="item">
                                         <div class="ow-client-logo">
                                             <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="images/client-logo/w2.png" alt=""></a></div>
+                                            <a href="javascript:void(0);"><img src="{{asset('assets/frontend/images/client-logo/w2.png')}}" alt=""></a></div>
                                         </div>
                                     </div>
                                     
                                     <div class="item">
                                         <div class="ow-client-logo">
                                             <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="images/client-logo/w3.png" alt=""></a></div>
+                                            <a href="javascript:void(0);"><img src="{{asset('assets/frontend/images/client-logo/w3.png')}}" alt=""></a></div>
                                         </div>
                                     </div>
                                     
                                     <div class="item">
                                         <div class="ow-client-logo">
                                             <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="images/client-logo/w4.png" alt=""></a></div>
+                                            <a href="javascript:void(0);"><img src="{{asset('assets/frontend/images/client-logo/w4.png')}}" alt=""></a></div>
                                         </div>
                                     </div>
                                     
                                     <div class="item">
                                         <div class="ow-client-logo">
                                             <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="images/client-logo/w5.png" alt=""></a></div>
+                                            <a href="javascript:void(0);"><img src="{{asset('assets/frontend/images/client-logo/w5.png')}}" alt=""></a></div>
                                         </div>
                                     </div>
                                     
                                     <div class="item">
                                         <div class="ow-client-logo">
                                             <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="images/client-logo/w6.png" alt=""></a></div>
+                                            <a href="javascript:void(0);"><img src="{{asset('assets/frontend/images/client-logo/w6.png')}}" alt=""></a></div>
                                         </div>
                                     </div>
                                     
@@ -1398,7 +1364,7 @@
                                     <div class="testimonial-5 bg-white">
                                         <div class="testimonial-pic-block radius-bx"> 
                                             <div class="testimonial-pic radius">
-                                                <img src="images/testimonials/pic1.jpg" width="132" height="132" alt="">
+                                                <img src="{{asset('assets/frontend/images/testimonials/pic1.jpg')}}" width="132" height="132" alt="">
                                             </div>
                                         </div>
                                         <div class="testimonial-text clearfix">
@@ -1419,7 +1385,7 @@
                                     <div class="testimonial-5 bg-white">
                                         <div class="testimonial-pic-block radius-bx"> 
                                             <div class="testimonial-pic radius">
-                                                <img src="images/testimonials/pic2.jpg" width="132" height="132" alt="">
+                                                <img src="{{asset('assets/frontend/images/testimonials/pic2.jpg')}}" width="132" height="132" alt="">
                                             </div>
                                         </div>
                                         <div class="testimonial-text clearfix">
@@ -1440,7 +1406,7 @@
                                     <div class="testimonial-5 bg-white">
                                         <div class="testimonial-pic-block radius-bx"> 
                                             <div class="testimonial-pic radius">
-                                                <img src="images/testimonials/pic1.jpg" width="132" height="132" alt="">
+                                                <img src="{{asset('assets/frontend/images/testimonials/pic1.jpg')}}" width="132" height="132" alt="">
                                             </div>
                                         </div>
                                         <div class="testimonial-text clearfix">
@@ -1461,7 +1427,7 @@
                                     <div class="testimonial-5 bg-white">
                                         <div class="testimonial-pic-block radius-bx"> 
                                             <div class="testimonial-pic radius">
-                                                <img src="images/testimonials/pic1.jpg" width="132" height="132" alt="">
+                                                <img src="{{asset('assets/frontend/images/testimonials/pic1.jpg')}}" width="132" height="132" alt="">
                                             </div>
                                         </div>
                                         <div class="testimonial-text clearfix">
@@ -1482,7 +1448,7 @@
                                     <div class="testimonial-5 bg-white">
                                         <div class="testimonial-pic-block radius-bx"> 
                                             <div class="testimonial-pic radius">
-                                                <img src="images/testimonials/pic2.jpg" width="132" height="132" alt="">
+                                                <img src="{{asset('assets/frontend/images/testimonials/pic2.jpg')}}" width="132" height="132" alt="">
                                             </div>
                                         </div>
                                         <div class="testimonial-text clearfix">
@@ -1503,7 +1469,7 @@
                                     <div class="testimonial-5 bg-white">
                                         <div class="testimonial-pic-block radius-bx"> 
                                             <div class="testimonial-pic radius">
-                                                <img src="images/testimonials/pic1.jpg" width="132" height="132" alt="">
+                                                <img src="{{asset('assets/frontend/images/testimonials/pic1.jpg')}}" width="132" height="132" alt="">
                                             </div>
                                         </div>
                                         <div class="testimonial-text clearfix">
@@ -1544,7 +1510,7 @@
                             <div class="col-md-4 col-sm-6">
                                 <div class="blog-post latest-blog-1 date-style-1">
                                     <div class="wt-post-media wt-img-effect zoom-slow">
-                                        <a href="javascript:;"><img src="images/blog/latest-blog/pic1.jpg" alt=""></a>
+                                        <a href="javascript:;"><img src="{{asset('assets/frontend/images/blog/latest-blog/pic1.jpg')}}" alt=""></a>
                                     </div>
                                     <div class="wt-post-info  bg-white">
                                     
@@ -1568,7 +1534,7 @@
                             <div class="col-md-4 col-sm-6">
                                 <div class="blog-post latest-blog-1 date-style-1">
                                     <div class="wt-post-media wt-img-effect zoom-slow">
-                                        <a href="javascript:;"><img src="images/blog/latest-blog/pic2.jpg" alt=""></a>
+                                        <a href="javascript:;"><img src="{{asset('assets/frontend/images/blog/latest-blog/pic2.jpg')}}" alt=""></a>
                                     </div>
                                     <div class="wt-post-info bg-white">
                                         
@@ -1592,7 +1558,7 @@
                             <div class="col-md-4 col-sm-12">
                                 <div class="blog-post latest-blog-1 date-style-1">
                                     <div class="wt-post-media wt-img-effect zoom-slow">
-                                        <a href="javascript:;"><img src="images/blog/latest-blog/pic3.jpg" alt=""></a>
+                                        <a href="javascript:;"><img src="{{asset('assets/frontend/images/blog/latest-blog/pic3.jpg')}}" alt=""></a>
                                     </div>
                                     <div class="wt-post-info  bg-white">
                                         
@@ -1647,7 +1613,7 @@
                             <div class="widget widget_about">
                                 <!--<h4 class="widget-title">About Company</h4>-->
                                 <div class="logo-footer clearfix p-b15">
-                                    <a href="index.html"><img src="images/logo-dark.png" alt=""></a>
+                                    <a href="index.html"><img src="{{asset('assets/frontend/images/logo-dark.png')}}" alt=""></a>
                                 </div>
                                 <p>Today we can tell you, thanks to your passion, hard work creativity, and expertise, you delivered us the most beautiful house great looks. lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                                 <ul class="social-icons f-social-link">

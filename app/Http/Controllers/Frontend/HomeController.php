@@ -86,5 +86,5 @@ class HomeController extends Controller
             'sponsors', 'testimonial_section', 'testimonials', 'blog_section', 'recent_posts',
             'faq_section', 'faqs', 'prices', 'contact_section', 'contacts', 'pages', 'color_option'));
     }
-
+   
 }

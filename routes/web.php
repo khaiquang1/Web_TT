@@ -45,6 +45,10 @@ use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,6 +66,12 @@ use Illuminate\Support\Facades\Route;
 // Start Site Frontend Route
 Route::get('/', [HomeController::class, 'index'])->name('homepage')->middleware('XSS');
 
+Route::get('/page-aboutus', [App\Http\Controllers\Frontend\PageController::class, 'about_us']);//add
+Route::get('/page-contactus', [App\Http\Controllers\Frontend\PageController::class, 'contact_us']);//add
+Route::get('/page-blog', [App\Http\Controllers\Frontend\BlogController::class, 'show_blog']);//add
+Route::get('/page-works', [App\Http\Controllers\Frontend\WorksMenuController::class, 'index']);//add
+
+
 Route::post('message', [App\Http\Controllers\Frontend\Landing\MessageController::class, 'store'])
     ->name('message.store')->middleware('XSS');
 
@@ -71,6 +81,9 @@ Route::middleware(['XSS'])->group(function () {
     Route::get('blog/category/{category_name}', [App\Http\Controllers\Frontend\BlogController::class, 'category_show'])->name('blog-category.show');
     Route::post('blog/search', [App\Http\Controllers\Frontend\BlogController::class, 'search'])->name('blog-page.search');
 });
+
+
+
 
 Route::get('page/{page_slug}', [App\Http\Controllers\Frontend\PageController::class, 'show'])
     ->name('any-page.show')->middleware('XSS');
@@ -404,5 +417,5 @@ Route::middleware(['XSS'])->group(function () {
 Route::any('{catchall}', [ErrorPageController::class, 'not_found'])->where('catchall', '.*');
 
 
-
+//Menu 
 

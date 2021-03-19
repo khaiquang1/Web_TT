@@ -25,6 +25,11 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function show_blog(){
+        return view('frontend.blog.blog_page');
+    }
     public function index()
     {
         // Get site language

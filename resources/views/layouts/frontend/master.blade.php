@@ -26,14 +26,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Title -->
-    <title>{{ __('frontend.home') }} @if (isset($general_seo)) - {{ $general_seo->site_name }} @endif</title>
-
+  <!--   <title>{{ __('frontend.home') }} @if (isset($general_seo)) - {{ $general_seo->site_name }} @endif</title> -->
+@yield('tittle')
 
  <!-- BOOTSTRAP STYLE SHEET -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/frontend/css/bootstrap.min.css')}}">
     <!-- FONTAWESOME STYLE SHEET -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/frontend/css/fontawesome/css/font-awesome.min.css')}}" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- OWL CAROUSEL STYLE SHEET -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/frontend/css/owl.carousel.min.css')}}">
@@ -79,7 +79,7 @@
                                 <div class="logo-header">
                                     <div class="logo-header-inner logo-header-one">
                                         <a href="index.html">
-                                            <img src="images/logo-dark.png" width="171" height="49" alt="" />
+                                            <img src="{{asset('assets/frontend/images/logo-dark.png')}}" width="171" height="49" alt="" />
                                         </a>
                                     </div>
                                 </div>
@@ -146,63 +146,29 @@
                                         <div class="vertical-nav">
                                             <ul class=" nav navbar-nav">
                                                 <li class="active">
-                                                    <a href="javascript:;">Home</a>
-                                                    <ul class="sub-menu">
-                                                        <li>
-                                                            <a href="index.html">Home-1</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index-2.html">Home-2</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index-3.html">Home-3</a>
-                                                        </li> 
-                                                        <li>
-                                                            <a href="index-4.html">Home-4</a>
-                                                        </li>                                                                                                                    
-                
-                                                    </ul>                                                    
+                                                    <a href="{{ URL::to('/') }}">Home</a>
+                                                                                              
                                                 </li>
                                                 <li>
                                                     <a href="javascript:;">Pages</a>
                                                     <ul class="sub-menu">
                                                         <li>
-                                                            <a href="about-1.html">About us</a>
+                                                            <a href="{{ URL::to('/page-aboutus') }}">About us</a>
                                                         </li>
                                                         <li>
-                                                            <a href="contact-1.html">Contact us</a>
+                                                            <a href="{{ URL::to('/page-contactus') }}">Contact us</a>
                                                         </li>
                                                     </ul>
                                                 </li>
                                                 <li>
-                                                    <a href="javascript:;">Blog</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="news-grid.html">Grid</a></li>
-                                                        <li><a href="news-listing.html">Listing</a></li>
-                                                        <li><a href="news-masonry.html">Masonry</a></li>
-                                                    </ul>
+                                                    <a href="{{ URL::to('/page-blog') }}">Blog</a>
+                                                    
                                                 </li>
                                                 <li>
-                                                    <a href="javascript:;">Works</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="work-grid.html">Grid</a></li>
-                                                        <li><a href="work-masonry.html">Masonry</a></li>
-                
-                                                        <li><a href="project-detail.html">Project Detail</a></li>                                        
-                                                    </ul>
+                                                    <a href="{{ URL::to('/page-works') }}">Works</a>
+                                                   
                                                 </li>
-                                                <li>
-                                                    <a href="javascript:;">Blog detail</a>
-                                                    <ul class="sub-menu">
-                
-                                                        <li><a href="post-gallery.html">Gallery</a></li>
-                
-                                                        <li><a href="post-right-sidebar.html">Right Sidebar</a></li>                                        
-                                                    </ul>                                    
-                                                </li>
-                                                <li class="submenu-direction">
-                                                    <a href="all-elements.html">All Elements</a>
-                                                </li>                                      
+                                                                           
                                             </ul>
                                         </div>
                                     </div> 
@@ -213,7 +179,6 @@
                     </div>
                 </div>
             </div>
-
 
 </header>
 <!-- header End -->
@@ -228,150 +193,128 @@
 
 
 <!-- Footer Area Start -->
-@if ($section_arr['footer_section'] == 1)
-    @if (isset($site_info) || count($socials) > 0 || count($pages) > 0 || count($contacts) > 0)
-        <footer class="footer">
-            <div class="footer-main-area" data-background="{{ asset('assets/frontend/images/footer-bg.png') }}">
+<footer class="site-footer footer-large  footer-light   footer-wide text-black">
+            
+            <!-- FOOTER BLOCKES START -->  
+            <div class="footer-top overlay-wraper">
+                <div class="overlay-main"></div>
+                
+                
+               
+                
                 <div class="container">
                     <div class="row">
-                        <div class="col-xl-4 col-lg-6 col-md-6">
-                            <div class="widget footer-widget">
-                                @if (!empty($general_site_image->site_white_logo_image)) <img src="{{ asset('uploads/img/general/'.$general_site_image->site_colored_logo_image) }}" class="mrb-20" alt="footer image"> @endif
-                                <address class="mrb-25">
-                                    @if (!empty($site_info->short_desc)) <p class="text-light-gray">{{ $site_info->short_desc }}</p> @endif
-                                </address>
-                                <ul class="social-list">
-                                    @foreach ($socials as $social)
-                                        <li><a href="@if (!empty($social->link)) {{ $social->link }} @else # @endif"><i class="{{ $social->social_media }}"></i></a></li>
-                                    @endforeach
+                        <!-- ABOUT COMPANY -->
+                        <div class="col-lg-5 col-md-5 col-sm-4">  
+                            <div class="widget widget_about">
+                                <!--<h4 class="widget-title">About Company</h4>-->
+                                <div class="logo-footer clearfix p-b15">
+                                    <a href="index.html"><img src="{{asset('assets/frontend/images/logo-dark.png')}}" alt=""></a>
+                                </div>
+                                <p>Today we can tell you, thanks to your passion, hard work creativity, and expertise, you delivered us the most beautiful house great looks. lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <ul class="social-icons f-social-link">
+                                    <li><a href="javascript:void(0);" class="fa fa-google"></a></li>
+                                    <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
+                                    <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
+                                    <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
+                                    <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
+                                </ul>                                    
+                            </div>
+                     
+                        </div> 
+
+                        <!-- TAGS -->
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="widget widget_address_outer m-b20">
+                                <h4 class="widget-title">Contact Us</h4>
+                                <ul class="widget_address">
+                                    <li>92 Princess Road, parkvenue,Greater London, NW18JR, United Kingdom</li>
+                                    <li>construxdemo@gmail.com</li>
+                                    <li>(+0091) 912-3456-073</li>
+                                    <li>(+0091) 912-3456-084</li>
                                 </ul>
+                           
                             </div>
                         </div>
-                        <div class="col-xl-2 col-lg-6 col-md-6">
-                            <div class="widget footer-widget">
-                                <h5 class="widget-title text-white mrb-30">Useful Links</h5>
-                                <ul class="footer-widget-list">
-                                    <li><a href="{{ url('/') }}">{{ __('frontend.home') }}</a></li>
-                                    @if ($section_arr['about_section'] == 1) <li><a href="{{ url('/'.'#about') }}">{{ __('frontend.about') }}</a></li> @endif
-                                    @if ($section_arr['service_section'] == 1) <li><a href="{{ url('/'.'#service') }}">{{ __('frontend.services') }}</a></li> @endif
-                                    @if ($section_arr['team_section'] == 1) <li><a href="{{ url('/'.'#team') }}">{{ __('frontend.teams') }}</a></li> @endif
-                                    @if ($section_arr['project_section'] == 1) <li><a href="{{ url('/'.'#case-study') }}">{{ __('frontend.projects') }}</a></li> @endif
-                                    @if ($section_arr['blog_section'] == 1) <li><a href="{{ url('/'.'#news') }}">{{ __('frontend.news') }}</a></li> @endif
-                                    @if ($section_arr['contact_section'] == 1) <li><a href="{{ url('/'.'#contact') }}">{{ __('frontend.contact') }}</a></li> @endif
+                                                
+                        <!-- USEFUL LINKS -->
+                        <div class="col-lg-3 col-md-3 col-sm-4">
+                            <div class="widget widget_services inline-links">
+                                <h4 class="widget-title">Useful links</h4>
+                                <ul>
+                                    <li><a href="about-1.html">About</a></li>
+                                    <li><a href="post-gallery.html">Gallery</a></li>
+                                    <li><a href="news-grid.html">Blog</a></li>
+                                    <li><a href="work-masonry.html">Portfolio</a></li>
+                                    <li><a href="contact-1.html">Contact Us</a></li>
                                 </ul>
+                            </div>                           
+                        </div>      
+
+                        <!-- NEWSLETTER -->
+
+                    </div>
+                    <div class="m-b10">
+                        <div class="wt-divider bg-gray-dark"><i class="icon-dot c-square"></i></div>
+                    </div>
+                    <div class="news-letter-footer">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="newsletter-f-left">
+                                    <h4 class="text-uppercase m-t0 m-b10">Subscribe to our newsletter!</h4>
+                                    <p>Never Miss Anything From Construx By Signing Up To Our Newsletter. </p>
+                                </div>
+                            </div>    
+                            <div class="col-md-6 col-sm-6">
+                                <div class="newsletter-f-right text-center">
+                                    <form role="search" method="post">
+                                        <div class="input-group">
+                                            <input name="news-letter" class="form-control" placeholder="ENTER YOUR EMAIL" type="text">
+                                            <span class="input-group-btn">
+                                                <button type="submit" class="site-button site-btn-effect"><span>Submit</span></button>
+                                            </span>
+                                        </div>
+                                     </form>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <div class="widget footer-widget">
-                                <h5 class="widget-title text-white mrb-30">{{ __('frontend.help') }}</h5>
-                                <ul class="footer-widget-list">
-                                    @foreach ($pages as $page)
-                                        @if ($page->display_footer_menu == 1)
-                                            <li>
-                                                <a href="{{ url('page/'.$page->page_slug) }}">{{ $page->page_title }}</a>
-                                            </li>
-                                        @endif
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <div class="widget footer-widget">
-                                <h5 class="widget-title text-white mrb-30">{{ __('frontend.contact_info') }}</h5>
-                                @foreach ($contacts as $contact)
-                                    <div class="mrb-10"><a href="#" class="text-light-gray">@if (!empty($contact->icon)) <i class="{{ $contact->icon }} mrr-10"></i> @endif {{ $contact->desc }}</a></div>
-                                @endforeach
-                            </div>
-                        </div>
+                        </div>                           
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom-area">
+            <!-- FOOTER COPYRIGHT -->
+            <div class="footer-bottom overlay-wraper">
+                <div class="overlay-main"></div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-xl-12">
-                            <div class="text-center">
-                                <span class="text-light-gray">@if (!empty($site_info->copyright)) {{ $site_info->copyright }} @endif</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    @else
-        <footer class="footer">
-            <div class="footer-main-area" data-background="{{ asset('assets/frontend/images/footer-bg.png') }}">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-6 col-md-6">
-                            <div class="widget footer-widget">
-                                <img src="{{ asset('uploads/common_dummy/logo-white.png') }}" alt="footer image" class="mrb-20">
-                                <address class="mrb-25">
-                                    <p class="text-light-gray">32 Dora Creek, tuntable creek, New South Wales 2480, Australia</p>
-                                    <div class="mrb-10"><a href="#" class="text-light-gray"><i class="fas fa-phone-alt mrr-10"></i>+088 234 432 15565</a></div>
-                                    <div class="mrb-10"><a href="#" class="text-light-gray"><i class="fas fa-envelope mrr-10"></i>sample@yourdomain.com</a></div>
-                                    <div class="mrb-0"><a href="#" class="text-light-gray"><i class="fas fa-globe mrr-10"></i>www.domainname.com</a></div>
-                                </address>
-                                <ul class="social-list">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-6 col-md-6">
-                            <div class="widget footer-widget">
-                                <h5 class="widget-title text-white mrb-30">Useful Links</h5>
-                                <ul class="footer-widget-list">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Team</a></li>
-                                    <li><a href="#">Service</a></li>
-                                    <li><a href="#">News</a></li>
-                                    <li><a href="#">Policy</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-6 col-md-6">
-                            <div class="widget footer-widget">
-                                <h5 class="widget-title text-white mrb-30">Help</h5>
-                                <ul class="footer-widget-list">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Team</a></li>
-                                    <li><a href="#">Service</a></li>
-                                    <li><a href="#">News</a></li>
-                                    <li><a href="#">Policy</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6">
-                            <div class="widget footer-widget">
-                                <h5 class="widget-title text-white mrb-30">Contact Info</h5>
-                                <div class="mrb-10"><a href="#" class="text-light-gray"><i class="fas fa-phone-alt mrr-10"></i>+088 234 432 15565</a></div>
-                                <div class="mrb-10"><a href="#" class="text-light-gray"><i class="fas fa-envelope mrr-10"></i>sample@yourdomain.com</a></div>
-                                <div class="mrb-0"><a href="#" class="text-light-gray"><i class="fas fa-globe mrr-10"></i>www.domainname.com</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="text-center">
-                                <span class="text-light-gray">Copyright © 2021 by <a class="text-primary-color" target="_blank" href="https://codecanyon.net/user/simsiyeka"> Simsiyeka</a> | All rights reserved </span>
-                            </div>
+                        <div class="wt-footer-bot-center">
+                            <span class="copyrights-text">© 2018 Your Company. Designed By Thewebmax</span>
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
-   
+        <!-- FOOTER END -->
+
+        <!-- BUTTON TOP START -->
+        <button class="scroltop"><span class="fa fa-angle-up  relative" id="btn-vibrate"></span></button>
+        
+     
+    </div>
+ 
+<!-- LOADING AREA START ===== -->
+<div class="loading-area">
+    <div class="loading-box"></div>
+    <div class="loading-pic">
+        <div class="cssload-thecube">
+            <div class="cssload-cube cssload-c1"></div>
+            <div class="cssload-cube cssload-c2"></div>
+            <div class="cssload-cube cssload-c4"></div>
+            <div class="cssload-cube cssload-c3"></div>
+        </div>
+    </div>
+</div>
+<!-- LOADING AREA  END ====== -->
+
 <!-- Footer Area End -->
 <!-- JAVASCRIPT  FILES ========================================= --> 
 <script  src="{{asset('assets/frontend/js/jquery-1.12.4.min.js')}}"></script><!-- JQUERY.MIN JS -->
